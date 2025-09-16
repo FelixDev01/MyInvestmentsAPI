@@ -28,13 +28,13 @@ public class UserService {
     /// POST METHOD
     @Transactional
     public UserResponseDTO register (UserRegisterDTO dto){
-        if (repository.existByEmail(dto.email())) {
+        if (repository.existsByEmail(dto.email())) {
             throw new RuntimeException("Email already registered");
         }
         User user = new User();
         user.setName(dto.name());
         user.setEmail(dto.email());
-        user.setPassword(dto.password());
+        user.setPassword(passwordEncoder.encode(dto.password()));
         user.setRoles(List.of("ROLE_USER"));
 
         User saveUser = repository.save(user);
