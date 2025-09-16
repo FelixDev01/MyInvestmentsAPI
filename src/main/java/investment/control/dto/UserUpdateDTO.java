@@ -1,4 +1,5 @@
 package investment.control.dto;
 
-public class UserRegisterDTO {
+public class UserUpdateDTO {
+    /// AFTER
 }
