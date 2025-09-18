@@ -1,6 +1,6 @@
 package investment.control.controller;
 
-import investment.control.dto.UserRegisterDTO;
+import investment.control.dto.UserRequestDTO;
 import investment.control.dto.UserResponseDTO;
 import investment.control.service.UserService;
 import jakarta.validation.Valid;
@@ -8,8 +8,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/auth")
@@ -22,7 +20,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<UserResponseDTO> register(@Valid @RequestBody UserRegisterDTO dto){
+    public ResponseEntity<UserResponseDTO> register(@Valid @RequestBody UserRequestDTO dto){
         UserResponseDTO responseDTO = service.register(dto);
         return ResponseEntity.ok(responseDTO);
     }

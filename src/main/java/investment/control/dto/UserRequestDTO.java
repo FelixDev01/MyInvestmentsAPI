@@ -2,7 +2,7 @@ package investment.control.dto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
-public record UserRegisterDTO(
+public record UserRequestDTO(
 
         @NotBlank(message = "name is required")
         String name,

@@ -1,8 +1,7 @@
 package investment.control.service;
 
-import investment.control.dto.UserRegisterDTO;
+import investment.control.dto.UserRequestDTO;
 import investment.control.dto.UserResponseDTO;
-import investment.control.dto.UserUpdateDTO;
 import investment.control.model.User;
 import investment.control.repository.UserRepository;
 import org.springframework.data.domain.Page;
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -27,7 +25,7 @@ public class UserService {
 
     /// POST METHOD
     @Transactional
-    public UserResponseDTO register (UserRegisterDTO dto){
+    public UserResponseDTO register (UserRequestDTO dto){
         if (repository.existsByEmail(dto.email())) {
             throw new RuntimeException("Email already registered");
         }
