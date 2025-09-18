@@ -7,7 +7,7 @@ public record UserRegisterDTO(
         @NotBlank(message = "name is required")
         String name,
 
-        @NotBlank(message = "name is required")
+        @NotBlank(message = "email is required")
         @Email(message = "Write a valid email format")
         String email,
 
