@@ -21,8 +21,15 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilter(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(req -> {
-                    req.requestMatchers("/h2-console/**").permitAll();
-                    req.requestMatchers("/auth/register", "/auth/users/**").permitAll();
+                    req.requestMatchers("/h2-console/**"
+                                                , "/swagger-ui/**"
+                                                , "/swagger-ui.html"
+                                                , "/v3/api-docs/**"
+                                                , "/auth/register"
+                                                , "/auth/login"
+                                                , "/auth/users/**"
+                                                , "/api/investments/**"
+                                                ).permitAll();
                     req.anyRequest().authenticated();
                 })
                 .csrf(csrf -> csrf.disable())

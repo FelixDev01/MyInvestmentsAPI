@@ -1,4 +1,5 @@
 package investment.control.dto.InvestmentDTO;
 
-public class InvestmentRequestDTO {
+public record InvestmentUpdateDTO() {
+    /// AFTER
 }

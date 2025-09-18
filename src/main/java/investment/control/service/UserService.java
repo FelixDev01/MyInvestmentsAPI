@@ -1,7 +1,7 @@
 package investment.control.service;
 
-import investment.control.dto.UserRequestDTO;
-import investment.control.dto.UserResponseDTO;
+import investment.control.dto.userDTO.UserRequestDTO;
+import investment.control.dto.userDTO.UserResponseDTO;
 import investment.control.model.User;
 import investment.control.repository.UserRepository;
 import org.springframework.data.domain.Page;

@@ -1,7 +1,7 @@
 package investment.control.controller;
 
-import investment.control.dto.UserRequestDTO;
-import investment.control.dto.UserResponseDTO;
+import investment.control.dto.userDTO.UserRequestDTO;
+import investment.control.dto.userDTO.UserResponseDTO;
 import investment.control.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
